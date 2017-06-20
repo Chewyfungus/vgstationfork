@@ -234,7 +234,7 @@
 		network.update = 1
 
 
-//Slows down the rate of update_icon() when many of them are called simultaneously and prevents some duplicate processing
+//Prevents some duplicate processing of update_icon() when many are called at the same time
 /datum/pipeline/proc/process_update_icon_queue()
 	for (var/obj/machinery/atmospherics/P in update_icon_queue)//P is the pipe that needs to call update_icon()
 		if (P.update_icon_dup_flag == TRUE)//Sets this flag to TRUE when it gets added to the list
